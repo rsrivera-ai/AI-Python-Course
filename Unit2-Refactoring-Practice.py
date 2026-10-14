@@ -22,6 +22,17 @@ question3 = {
 questions = [question1, question2, question3]
 
 # AC 3.1 - User-defined function containing a series of commands
+
+def get_valid_answer():
+    answer = input("Enter A, B, C or D: ").upper()
+
+    while answer not in ["A", "B", "C", "D"]:
+        print("Invalid answer. Please try again.")
+        answer = input("Enter A, B, C or D: ").upper()
+
+    return answer
+
+
 def runquiz():
     score = 0
 
@@ -36,13 +47,8 @@ def runquiz():
         for choice in question["choices"]:
             print(choice)
 
-        # AC 2.2 - input() is a built-in function
-        answer = input("Enter A, B, C or D: ").upper() # answer can be given in upper or lower case
-
-        # AC 2.3 - While loop repeats until valid input is entered
-        while answer not in ["A", "B", "C", "D"]:
-            print("Invalid answer. Please try again.")
-            answer = input("Enter A, B, C or D: ").upper() # answer can be given in upper or lower case
+        # Refactoring: call the reusable input-validation function
+        answer = get_valid_answer()
 
         # AC 2.1 - Decision-making using if/else
         if answer == question["answer"]:
