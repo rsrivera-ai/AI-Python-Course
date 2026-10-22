@@ -15,7 +15,7 @@ def get_valid_name():
 
 
 def save_name(name):
-    """Save the validated name to a text file."""
+    """Append a validated user name to a text file."""
     with open("user_names.txt", "a", encoding="utf-8") as file:
         file.write(name + "\n")
 
