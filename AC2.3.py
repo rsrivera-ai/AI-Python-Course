@@ -26,7 +26,7 @@ def main():
     print("Welcome,", name)
     save_name(name)
     print("Your name has been saved successfully.")
-    print("Temporary testing feature enabled.")
+
 
 if __name__ == "__main__":
     main()
